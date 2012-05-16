@@ -1,0 +1,40 @@
+	local start="2"
+    while [ `echo $1 | grep "-"` ]; do
+       case $1 in
+		   	-s|--start) start=$2;;
+			*)           blabln "'"$1"' unknown\n usage medians [options]"; 
+				         return 1;;
+       esac
+       shift 2
+    done
+	gawk '
+	BEGIN{FS=","}
+	     {print}
+	/^[ \t]*$/ {next}	 
+	/#/  {next}
+	     {for(I=Start;I<=NF;I++) {
+			(Data[I,0]++); Data[I,Data[I,0]]=$I }
+		 }
+	END{ #printf("#---")
+	     #for(I=Start;I<=NF;I++) 
+		 #   printf(",-----")
+		 #print ""
+		 printf("##");
+		 printf $1
+		 for(I=2;I<Start;I++) 
+			 printf ","$I
+		 for(I=Start;I<=NF;I++) {
+			    Max=Data[I,0];
+			    delete Val
+			    N=0;
+			    for(J=1;J<=Max;J++) 
+				     Val[J]  = Data[I,J]
+				asorti(Val);
+				if(Max % 2 ) { printf(",%s",Val[int(Max/2)]) }
+			    else        { below=Val[int(Max/2)];
+					          above=Val[int(Max/2) + 1];
+					          printf(",%s",(below+above)/2)
+						    }
+			}
+		   print ""
+		}' Start=$start -

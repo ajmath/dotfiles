@@ -1,0 +1,2 @@
+	url=`urlencode $1`
+	echo -e "POST /launch/dev?url=$url HTTP/1.1\r\n" | nc $ROKU_DEV_TARGET 8060

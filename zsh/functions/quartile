@@ -1,0 +1,48 @@
+        awk '
+	BEGIN { 
+		FS = OFS = ","; # #
+		Shrink = 2; #
+		Left   = -100;
+		Right  = 100; #
+		Off    = " "; #
+		Max = "]"; #
+		Min = "["; #
+		Median = "|"; #
+				Low ="-";
+				High = "+";
+		F      = "5.1f" #
+				#Header = "min,q1,median,q3,max,"
+	}
+	
+	{  S[++N]=$1 }
+	
+	END {
+		asorti(S); if(Header) print Header;report(S,N)}
+		function round(x)      { return int(x<0 ? x-0.5 : x+0.5) }
+		function report(s,n,     min,q1,median,q3,max,kludge) {
+		min   = s[1];
+		q1    = s[int(n/4)];
+		median= s[int(2*n/4)];
+		q3    = s[int(3*n/4)];
+		max   = s[n];
+		printf("%"F",%"F",%"F",%"F",%"F",%s\n",
+			 min,q1,median,q3,max,
+			 quart(min,q1,median,q3,max,Right,Shrink)) | "sort -t, -r -n -k 2,2"
+	}
+	
+	
+	function quart(min,q1,median,q3,max,width, scale,  i,l,str) {
+		width  /= scale
+		min    /= scale
+		q1     /= scale
+		median /= scale
+		q3     /= scale
+		max    /= scale
+		for(i=  1; i<=width; i++) l[int(i)]= Off;
+		for(i=min;    i<=q1; i++) l[int(i)]= Low;
+		for(i= q3;   i<=max; i++) l[int(i)]= High;
+		l[int(median)] = Median
+		for(i= 1; i<=width; i++) str = str l[int(i)];
+		return Min str Max
+	}
+' -
