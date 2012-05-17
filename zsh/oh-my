@@ -29,3 +29,5 @@ ZSH_THEME="matheeeny"
 plugins=(git osx cap ant brews)
 
 source $ZSH/oh-my-zsh.sh
+
+unsetopt correct_all
