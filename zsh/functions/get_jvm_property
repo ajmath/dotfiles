@@ -1,0 +1,1 @@
+echo 'System.getProperty("'$1'")' | groovysh | sed -n '5p' | sed 's/===> //'
