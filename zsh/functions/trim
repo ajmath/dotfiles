@@ -1,5 +1,5 @@
 	if [ $1 ]; then
 		echo $1;
 	else
-		awk '{gsub(/^ +| +$/,"")}1';
+		while read x; do echo $x; done;
 	fi

@@ -6,8 +6,7 @@ fi
 
 export EDITOR='mate_wait'
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export PATH="$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export PATH=$PATH:/usr/local/mysql/bin
+export PATH="/usr/local/bin:$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export JVM_ARGS="-Xmx4096m"
