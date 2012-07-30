@@ -41,4 +41,4 @@ alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.
 # misc
 alias awk='gawk'
 alias mysql5='mysql'
-
+alias cleanXml='tidy -i -xml -wrap -1'
