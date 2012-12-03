@@ -8,8 +8,6 @@ alias ll="ls -l"
 alias la='ls -A'
 
 # git
-alias gl='git pull'
-alias gp='git push'
 alias gd='git diff'
 alias gc='git commit'
 alias gca='git commit -a'
@@ -19,6 +17,7 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gcam='git commit -am'
+alias gpr='git pull --rebase'
 
 # rails
 alias sc='script/console'
