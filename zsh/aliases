@@ -41,3 +41,4 @@ alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.
 alias awk='gawk'
 alias mysql5='mysql'
 alias cleanXml='tidy -i -xml -wrap -1'
+alias mvim='open -a MacVim.app'
