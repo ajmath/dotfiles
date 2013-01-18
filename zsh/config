@@ -10,8 +10,16 @@ export PATH="/usr/local/bin:$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/lo
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export JVM_ARGS="-Xmx4096m"
+export JRUBY_OPTS="-J-Xmx4096m"
+
+export PATH="$HOME/code/aws-cli/bin:$PATH"
+
+export "THREEWIDE_NETWORK_HOME=$HOME/code/3yd-network"
+source "$THREEWIDE_NETWORK_HOME/utils/aws-helper-methods"
 
 fpath=(~/.zsh/functions $fpath)
+
+eval "$(fasd --init auto)"
 
 autoload -U ~/.zsh/functions/*(:t)
 
@@ -47,10 +55,5 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char 
-
-# Make git autocomplete faster - http://talkings.org/post/5236392664/zsh-and-slow-git-completion
-__git_files () { 
-    _wanted files expl 'local files' _files 
-}
 
 source ~/.nvm/nvm.sh

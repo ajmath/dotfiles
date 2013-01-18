@@ -1,2 +1,6 @@
 export PS1="\w$ "
 export EDITOR="mvim"
+export JRUBY_OPTS="-J-Xmx4096m"
+
+export "THREEWIDE_NETWORK_HOME=$HOME/code/3yd-network"
+source "$THREEWIDE_NETWORK_HOME/utils/aws-helper-methods"

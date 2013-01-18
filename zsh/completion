@@ -1,6 +1,18 @@
 autoload -U compinit
 compinit
 
+autoload -U bashcompinit
+bashcompinit
+
+complete -C aws_completer aws
+
+
+# Make git autocomplete faster - http://talkings.org/post/5236392664/zsh-and-slow-git-completion
+__git_files () { 
+    _wanted files expl 'local files' _files 
+}
+
+
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 

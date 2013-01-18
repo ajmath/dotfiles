@@ -1,6 +1,7 @@
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
+. ~/.zsh/fasd
 . ~/.zsh/oh-my
 
 # use .localrc for settings specific to one system
