@@ -55,7 +55,10 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 if &t_Co >= 256 || has("gui_running")
-  "colorscheme railscast
+    set background=dark
+    " solarized options 
+    let g:solarized_termcolors=16
+    colorscheme solarized
 endif
 
 if &t_Co > 2 || has("gui_running")
