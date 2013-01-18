@@ -7,7 +7,10 @@ fi
 export EDITOR='mvim'
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export PATH="/usr/local/bin:$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
+
+if [ -e /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
 export JVM_ARGS="-Xmx4096m"
 export JRUBY_OPTS="-J-Xmx4096m"
@@ -15,11 +18,11 @@ export JRUBY_OPTS="-J-Xmx4096m"
 export PATH="$HOME/code/aws-cli/bin:$PATH"
 
 export "THREEWIDE_NETWORK_HOME=$HOME/code/3yd-network"
-source "$THREEWIDE_NETWORK_HOME/utils/aws-helper-methods"
+if [ -e $THREEWIDE_NETWORK_HOME ]; then
+    source "$THREEWIDE_NETWORK_HOME/utils/aws-helper-methods"
+fi
 
 fpath=(~/.zsh/functions $fpath)
-
-eval "$(fasd --init auto)"
 
 autoload -U ~/.zsh/functions/*(:t)
 
@@ -56,4 +59,6 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char 
 
-source ~/.nvm/nvm.sh
+if [ -e ~/.nvm/nvm.sh ]; then
+    source ~/.nvm/nvm.sh
+fi
