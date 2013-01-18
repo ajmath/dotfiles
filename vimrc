@@ -40,6 +40,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title               " change the terminal's title
 set visualbell          " don't beep
 set noerrorbells        " don't beep
+set laststatus=2  " Always show status line.
 
 " don't bother me with .bak and .swp files
 set nobackup
@@ -62,27 +63,6 @@ if &t_Co > 2 || has("gui_running")
    syntax on
 endif
 
-"Statusline config - taken from http://github.com/zph/zph
-set laststatus=2  " Always show status line.
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-     "              | | | | |  |   |      |  |     |    |
-     "              | | | | |  |   |      |  |     |    + current
-     "              | | | | |  |   |      |  |     |       column
-     "              | | | | |  |   |      |  |     +-- current line
-     "              | | | | |  |   |      |  +-- current % into file
-     "              | | | | |  |   |      +-- current syntax in
-     "              | | | | |  |   |          square brackets
-     "              | | | | |  |   +-- current fileformat
-     "              | | | | |  +-- number of lines
-     "              | | | | +-- preview flag in square brackets
-     "              | | | +-- help flag in square brackets
-     "              | | +-- readonly flag in square brackets
-     "              | +-- rodified flag in square brackets
-     "              +-- full path to file in the buffer
- " }
- "
-" Taken from Gary Bernhardt's Dotfiles on github
-
 " Show a # at the end of a line
 set list
 set listchars=extends:#,nbsp:.
@@ -92,10 +72,10 @@ vmap Q gq
 nmap Q gqap
 
 " Force myself to use jklh
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+map <up> :echo "no!" <cr>
+map <down> :echo "no!" <cr>
+map <left> :echo "no!" <cr>
+map <right> :echo "no!" <cr>
 
 " Easy window navigation
 map <C-h> <C-w>h
