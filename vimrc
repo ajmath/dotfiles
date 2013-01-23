@@ -11,6 +11,8 @@ call pathogen#runtime_append_all_bundles()
 
 let mapleader=","
 
+source /Users/amatheny/code/powerline/powerline/ext/vim/source_plugin.vim
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
