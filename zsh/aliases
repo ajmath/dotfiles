@@ -42,7 +42,7 @@ alias less='less --LINE-NUMBERS'
 # misc
 alias awk='gawk'
 alias mysql5='mysql'
-alias cleanXml='tidy -i -xml -wrap -1'
+alias cleanXml='tidy -i -xml -utf8 -q -wrap -1'
 alias mvim='open -a MacVim.app'
 
 
