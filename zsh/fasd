@@ -24,7 +24,7 @@
 # the sourcing so that fasd doesn't overwrite
 # my personal aliases
 
-if [ "`type fasd && echo 1 || echo 0`" == 0 ]; then
+if [ "`type fasd &> /dev/null && echo 1 || echo 0`" == 0 ]; then
     exit 0
 fi
 
