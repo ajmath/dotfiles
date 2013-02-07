@@ -17,11 +17,6 @@ export JRUBY_OPTS="-J-Xmx4096m"
 
 export PATH="$HOME/code/aws-cli/bin:$PATH"
 
-export "THREEWIDE_NETWORK_HOME=$HOME/code/3yd-network"
-if [ -e $THREEWIDE_NETWORK_HOME ]; then
-    source "$THREEWIDE_NETWORK_HOME/utils/aws-helper-methods"
-fi
-
 fpath=(~/.zsh/functions $fpath)
 
 autoload -U ~/.zsh/functions/*(:t)
