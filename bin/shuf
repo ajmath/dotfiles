@@ -1,0 +1,11 @@
+#!/usr/bin/php -n
+<?php
+
+// This is the key step of the script, takes in the input from stdin which can then be shuffled and output
+$input = file_get_contents('php://stdin');
+
+$input = explode("\n",$input);
+shuffle($input);
+
+echo implode("\n",$input);
+?>

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+dir=${1:-`pwd`}
+
+echo $dir
+
+for mkv in `ls "$dir" | grep -e '\.mkv$'`; do 
+    mp4=`echo "$mkv" | sed 's/\.mkv$/.mp4/'`
+    if [ ! -e "$dir/$mp4" ]; then
+    	ffmpeg -i "$dir/$mkv" -vcodec copy -acodec copy "$dir/$mp4"
+    fi
+done
+
