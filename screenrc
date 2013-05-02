@@ -60,7 +60,7 @@ shell -/bin/zsh
  #                              the rest of the caption string is justified
  #                              against the right edge of the screen.
  #                              NOTE: doesn't appear to truncate previous text.
- caption always           "%?%F%{= Kk}%:%{=u kR}%?  %h %-024=%{+b} %C%a %D %d %M %Y%{= db}"
+ caption always           "%?%F%{=b kr}%:%?  %h %-024= %C%a %D %d %M %Y%{= db}"
  # use the hardstatus line for the window list
  #    alwayslastline      - always display the hardstatus as the last line of the
  #                          terminal
@@ -85,4 +85,4 @@ shell -/bin/zsh
  #                          that follows this) and revert to the [d]efault
  #                          background and [d]efault foreground colors, with no
  #                          ('= ') other effects.
- hardstatus alwayslastline "%{= kR} %-Lw%{=b Kk} %n%f %t %{-}%+Lw %=%{= dd}"
+ hardstatus alwayslastline "%{= kd} %-Lw%{= kr} %n%f %t %{-}%+Lw %=%{= dd}"
