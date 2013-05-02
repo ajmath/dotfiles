@@ -1,2 +1,6 @@
 #!/bin/sh
-unzip $1 -d `echo $1 | sed "s/\.zip$//"`
+
+for file; do
+  unzip "$file" -d "`echo $file | sed "s/\.zip$//"`"
+done
+
