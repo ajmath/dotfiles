@@ -11,6 +11,8 @@ export PATH="/.bin:/usr/local/homebrew/bin:$PATH"
 export PATH="/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export PATH="$HOME/local/node/bin:/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/code/aws-cli/bin:$PATH"
+export PATH="/usr/texbin/:$PATH"
+
 if [ -e "$(brew --prefix josegonzalez/php/php54)" ]; then
   export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 fi
