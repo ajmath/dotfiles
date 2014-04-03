@@ -37,12 +37,15 @@ alias %=' '
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias whatsmyip='wget -qO- icanhazip.com'
+alias prettyJSON='python -mjson.tool'
 
 # misc
 alias awk='gawk'
 alias mysql5='mysql'
 alias cleanXml='tidy -i -xml -utf8 -q -wrap -1'
 alias mvim='open -a MacVim.app'
+
+alias flushDns='sudo killall -HUP mDNSResponder'
 
 
 #AWS

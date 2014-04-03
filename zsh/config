@@ -4,21 +4,27 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
-export EDITOR='mate'
+export GOPATH=$HOME/code/go
+
+export EDITOR='vim'
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 export PATH="/.bin:/usr/local/homebrew/bin:$PATH"
 export PATH="/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export PATH="$HOME/local/node/bin:/usr/local/share/npm/bin:$PATH"
-export PATH="$HOME/code/aws-cli/bin:$PATH"
-export PATH="/usr/texbin/:$PATH"
+export PATH="/usr/texbin:$PATH"
+export PATH=$PATH:$GOPATH/bin
 
-if [ -e "$(brew --prefix josegonzalez/php/php54)" ]; then
-  export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+if [ -e "/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt" ]; then
+    export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 fi
 
 if [ -e /usr/libexec/java_home ]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME=$(/usr/libexec/java_home -v '1.7*')
+fi
+
+if [ -e /usr/local/opt/grails/libexec ]; then
+    export GRAILS_HOME=/usr/local/opt/grails/libexec
 fi
 
 export JVM_ARGS="-Xmx4096m"
@@ -68,4 +74,8 @@ function serve {
 
 if [ -e ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
+fi
+
+if [ -e ~/.gvm/bin/gvm-init.sh ]; then
+    source ~/.gvm/bin/gvm-init.sh
 fi

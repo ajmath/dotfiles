@@ -4,8 +4,7 @@ compinit
 autoload -U bashcompinit
 bashcompinit
 
-complete -C aws_completer aws
-
+complete -C ~/venv/bin/aws_completer aws
 
 # Make git autocomplete faster - http://talkings.org/post/5236392664/zsh-and-slow-git-completion
 __git_files () { 
