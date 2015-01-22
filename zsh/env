@@ -4,6 +4,10 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
+if [ -e "/opt/homebrew-cask/Caskroom/atom/latest/" ]; then
+  export ATOM_PATH=/opt/homebrew-cask/Caskroom/atom/latest/
+fi
+
 export GOPATH=$HOME/code/go
 
 export EDITOR='vim'
