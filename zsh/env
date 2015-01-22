@@ -27,5 +27,9 @@ if [ -e /usr/local/opt/grails/libexec ]; then
     export GRAILS_HOME=/usr/local/opt/grails/libexec
 fi
 
+export DOCKER_CERT_PATH=/Users/amatheny/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+
 export JVM_ARGS="-Xmx4096m"
 export JRUBY_OPTS="-J-Xmx4096m"
