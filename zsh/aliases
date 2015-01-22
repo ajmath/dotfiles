@@ -45,7 +45,8 @@ alias mysql5='mysql'
 alias cleanXml='tidy -i -xml -utf8 -q -wrap -1'
 alias mvim='open -a MacVim.app'
 
-alias flushDns='sudo killall -HUP mDNSResponder'
+alias flushDns='sudo discoveryutil udnsflushcaches'
+
 
 # sounds
 alias tmyk="afplay ~/code/dotfiles/sounds/The\ more\ you\ know.mp3"
