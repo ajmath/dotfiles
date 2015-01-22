@@ -35,16 +35,3 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
-
-
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-if [ -e ~/.nvm/nvm.sh ]; then
-    source ~/.nvm/nvm.sh
-fi
-
-if [ -e ~/.gvm/bin/gvm-init.sh ]; then
-    source ~/.gvm/bin/gvm-init.sh
-fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
