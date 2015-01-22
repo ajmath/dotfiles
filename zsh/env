@@ -20,7 +20,7 @@ if [ -e "/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt" ]; then
 fi
 
 if [ -e /usr/libexec/java_home ]; then
-    export JAVA_HOME=$(/usr/libexec/java_home -v '1.7*')
+    export JAVA_HOME=$(/usr/libexec/java_home -v '1.8*')
 fi
 
 if [ -e /usr/local/opt/grails/libexec ]; then
