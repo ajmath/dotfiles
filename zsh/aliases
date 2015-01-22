@@ -47,6 +47,10 @@ alias mvim='open -a MacVim.app'
 
 alias flushDns='sudo killall -HUP mDNSResponder'
 
+# sounds
+alias tmyk="afplay ~/code/dotfiles/sounds/The\ more\ you\ know.mp3"
+
+
 
 #AWS
 alias describe-instances="aws ec2 describe-instances | jq '[.reservationSet[] | .instancesSet[] | {launchTime, dnsName, state: [.instanceState.name][0], tags: [.tagSet[].value]}]'"
