@@ -4,7 +4,10 @@ compinit
 autoload -U bashcompinit
 bashcompinit
 
-complete -C ~/venv/bin/aws_completer aws
+
+if [ -e "$HOME/bin/aws_zsh_completer.sh" ]; then
+  source $HOME/bin/aws_zsh_completer.sh
+fi
 
 # Make git autocomplete faster - http://talkings.org/post/5236392664/zsh-and-slow-git-completion
 __git_files () { 
