@@ -49,7 +49,7 @@ alias flushDns='sudo discoveryutil udnsflushcaches'
 
 
 # sounds
-alias tmyk="afplay ~/code/dotfiles/sounds/The\ more\ you\ know.mp3"
+alias tmyk="afplay ~/.sounds/The\ more\ you\ know.mp3"
 
 
 
