@@ -12,7 +12,7 @@ shell -/bin/zsh
  #    always                  - display the caption continuously.  Since
  #                              hardstatus is 'alwayslastline', it will be on the
  #                              next to last line.
- #    "%?%F"                  - if (leading '%?') this region has focus ('%F') 
+ #    "%?%F"                  - if (leading '%?') this region has focus ('%F')
  #                              (e.g. it's the only region being displayed, or,
  #                              if in split-screen mode, it's the currently active
  #                              region)
@@ -20,7 +20,7 @@ shell -/bin/zsh
  #                                with no other effects (standout, underline, etc.)
  #    "%:"                    - otherwise ('%:' between a pair of '%?'s)
  #      "%{=u kR}"              - set the colorscheme to [R]ed on blac[k], and
- #                                underline it, but no other effects (bold, standout, etc.) 
+ #                                underline it, but no other effects (bold, standout, etc.)
  #    "%?"                    - end if (trailing '%?')
  #    "  %h "                 - print two spaces, tthne the [h]ardstatus of the
  #                              current tab window (as set by zsh - see zshrc) and
@@ -60,7 +60,7 @@ shell -/bin/zsh
  #                              the rest of the caption string is justified
  #                              against the right edge of the screen.
  #                              NOTE: doesn't appear to truncate previous text.
- caption always           "%?%F%{=b kr}%:%?  %h %-024= %C%a %D %d %M %Y%{= db}"
+ caption always           "%?%F%{=b kr}%:%?  %h %-024= %=%{= db}"
  # use the hardstatus line for the window list
  #    alwayslastline      - always display the hardstatus as the last line of the
  #                          terminal
