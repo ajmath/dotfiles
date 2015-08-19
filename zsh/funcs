@@ -2,3 +2,11 @@ function serve {
   port="${1:-3001}"
   ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
 }
+
+function median {
+  if [[ "$#" -eq "0" ]]; then
+    sort -n  | awk ' { a[i++]=$1; } END { print a[int(i/2)]; }'
+  else
+    cut -d ',' -f '$2' $1 | awk ' { a[i++]=$1; } END { print a[int(i/2)]; }'
+  fi
+}
