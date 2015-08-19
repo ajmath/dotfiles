@@ -38,6 +38,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias whatsmyip='wget -qO- icanhazip.com'
 alias prettyJSON='python -mjson.tool'
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 # misc
 alias awk='gawk'
@@ -52,6 +53,5 @@ alias flushDns='sudo discoveryutil udnsflushcaches'
 alias tmyk="afplay ~/.sounds/The\ more\ you\ know.mp3"
 
 
-
-#AWS
-alias describe-instances="aws ec2 describe-instances | jq '[.reservationSet[] | .instancesSet[] | {launchTime, dnsName, state: [.instanceState.name][0], tags: [.tagSet[].value]}]'"
+#docker
+type docker-compose >/dev/null 2>&1 && alias dcompose=docker-compose
