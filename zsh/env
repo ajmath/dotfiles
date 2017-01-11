@@ -31,7 +31,7 @@ if [ -e /usr/local/opt/grails/libexec ]; then
     export GRAILS_HOME=/usr/local/opt/grails/libexec
 fi
 
-eval "$(docker-machine env default)"
+#eval "$(docker-machine env default)"
 
 export JVM_ARGS="-Xmx4096m"
 export JRUBY_OPTS="-J-Xmx4096m"
