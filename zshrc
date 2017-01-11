@@ -33,6 +33,9 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+source ~/.tilde/plugins/tilde-soundboard/bashrc
+alias sb=soundboard
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/amatheny/.sdkman"
 sdkman-setup() {
