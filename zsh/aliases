@@ -51,7 +51,4 @@ alias flushDns='sudo discoveryutil udnsflushcaches'
 
 # sounds
 alias tmyk="afplay ~/.sounds/The\ more\ you\ know.mp3"
-
-
-#docker
-type docker-compose >/dev/null 2>&1 && alias dcompose=docker-compose
+alias terrorform="afplay ~/.sounds/terrorform.wav"
