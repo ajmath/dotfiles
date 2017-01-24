@@ -19,19 +19,6 @@ alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG
 alias gcam='git commit -am'
 alias gpr='git pull --rebase'
 
-# rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
-
-# commands starting with % for pasting from web
-alias %=' '
-
 
 # utils
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
@@ -42,12 +29,7 @@ alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 # misc
 alias awk='gawk'
-alias mysql5='mysql'
 alias cleanXml='tidy -i -xml -utf8 -q -wrap -1'
-alias mvim='open -a MacVim.app'
-
-alias flushDns='sudo discoveryutil udnsflushcaches'
-
 
 # sounds
 alias tmyk="afplay ~/.sounds/The\ more\ you\ know.mp3"
