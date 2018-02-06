@@ -14,7 +14,7 @@ export PATH="/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export PATH="$HOME/local/node/bin:/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/texbin:$PATH"
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:"/Users/amatheny/Library/Android/sdk/platform-tools/"
+export PATH=$PATH:"/Users/amatheny/Library/Android/sdk/platform-tools"
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
