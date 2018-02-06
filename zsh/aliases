@@ -21,8 +21,8 @@ alias gpr='git pull --rebase'
 
 
 # utils
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
-alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+alias urlencode='python -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
+alias urldecode='python -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
 alias whatsmyip='wget -qO- icanhazip.com'
 alias prettyJSON='python -mjson.tool'
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
