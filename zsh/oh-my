@@ -2,11 +2,14 @@
 export ZSH="$HOME/.zsh/oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="matheeeny"
+# Install fonts via
+# brew tap caskroom/fonts
+# brew cask install font-roboto-mono-for-powerline
+# Set terminal/iTerm2 to use font
+DEFAULT_USER="amatheny"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir aws vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -26,7 +29,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(z git osx brews bundler rvm gradle node atom npm)
+plugins=(git osx gradle node npm yarn aws redis-cli web-search)
 
 source $ZSH/oh-my-zsh.sh
 
