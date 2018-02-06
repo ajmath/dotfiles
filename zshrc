@@ -38,10 +38,15 @@ alias sb=soundboard
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/amatheny/.sdkman"
-sdkman-setup() {
-  [[ -s "/Users/amatheny/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/amatheny/.sdkman/bin/sdkman-init.sh"
-}
+[[ -s "/Users/amatheny/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/amatheny/.sdkman/bin/sdkman-init.sh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/sls.zsh
