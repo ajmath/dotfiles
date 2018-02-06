@@ -18,7 +18,11 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gcam='git commit -am'
 alias gpr='git pull --rebase'
-
+function clone() {
+  local repoName=$(echo $1 | awk -F/ '{ print $NF }' | sed 's/\.git//')
+  git clone "$1" "$HOME/code/$repoName"
+  cd "$HOME/code/$repoName"
+}
 
 # utils
 alias urlencode='python -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
