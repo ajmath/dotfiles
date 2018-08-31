@@ -30,6 +30,9 @@ alias urldecode='python -c "import sys, urllib.parse as ul; print(ul.unquote_plu
 alias whatsmyip='wget -qO- icanhazip.com'
 alias prettyJSON='python -mjson.tool'
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias ping='prettyping'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+[ -s '/usr/local/bin/bat' ] && alias cat='bat'
 
 # misc
 alias awk='gawk'

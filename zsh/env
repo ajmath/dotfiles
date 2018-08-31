@@ -9,14 +9,20 @@ export GOPATH=$HOME/code/go
 export EDITOR='vim'
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
-export PATH="/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export PATH="$HOME/local/node/bin:/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/texbin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:"/Users/amatheny/Library/Android/sdk/platform-tools"
+export PATH=$PATH:"/Users/amatheny/Library/Android/sdk/tools/bin"
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+
+if [ -e "/Users/amatheny/Library/Android/sdk" ]; then
+  export ANDROID_HOME="/Users/amatheny/Library/Android/sdk/"
+fi
 
 if [ -e "/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt" ]; then
     export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
