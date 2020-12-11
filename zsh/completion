@@ -45,3 +45,6 @@ function _autoComplete_yarn_run() {
 }
 complete -F _autoComplete_yarn_run yarn
 complete -F _autoComplete_yarn_run npm
+
+TWILIO_AC_ZSH_SETUP_PATH=/Users/amatheny/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH
+

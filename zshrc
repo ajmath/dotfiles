@@ -53,3 +53,5 @@ export PATH="$HOME/.yarn/bin:$PATH"
 [[ -f /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/sls.zsh
 
 source $HOME/code/dotfiles/zsh/fzf
+
+$(brew --prefix asdf)/asdf.sh

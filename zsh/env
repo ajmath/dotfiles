@@ -8,8 +8,8 @@ export GOPATH=$HOME/code/go
 
 export EDITOR='vim'
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:$HOME/.bin:$PATH"
 export PATH="/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export PATH="$HOME/local/node/bin:/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/texbin:$PATH"
@@ -38,3 +38,5 @@ fi
 
 export JVM_ARGS="-Xmx4096m"
 export JRUBY_OPTS="-J-Xmx4096m"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
