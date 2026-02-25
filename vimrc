@@ -62,17 +62,18 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " in  Normal mode: <Leader>t
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-if &t_Co >= 256 || has("gui_running")
-    set background=dark
-    " solarized options 
-    let g:solarized_termcolors=16
-    colorscheme solarized
+" --- Color Configuration ---
+if has("termguicolors")
+    set termguicolors
 endif
 
-if &t_Co > 2 || has("gui_running")
-   " switch syntax highlighting on, when the terminal has colors
-   syntax on
-endif
+set background=dark
+colorscheme solarized8
+
+" Switch syntax highlighting on
+syntax on
+" --- End Color Configuration ---
+
 
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
