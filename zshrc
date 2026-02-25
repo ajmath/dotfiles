@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-. ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
 . ~/.zsh/funcs
@@ -23,23 +22,6 @@ if which pyenv > /dev/null; then
   source /usr/local/opt/pyenv/completions/pyenv.zsh
 fi
 
-nvm() {
-  source ~/.nvm/nvm.sh
-  nvm "$@"
-  _NVM_LOADED="true"
-}
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ "${_NVM_LOADED}" == "true" && $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
 [[ -f "${HOME}/.tilde/plugins/tilde-soundboard/bashrc" ]] && source "${HOME}/.tilde/plugins/tilde-soundboard/bashrc"
 alias sb=soundboard
 
@@ -47,21 +29,13 @@ alias sb=soundboard
 export SDKMAN_DIR="/Users/amatheny/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/serverless.zsh
-
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/amatheny/code/trebuchet/node_modules/tabtab/.completions/sls.zsh
-
 #source $HOME/code/dotfiles/zsh/fzf
 
 [[ -s "$(brew --prefix asdf)/asdf.sh" ]] && $(brew --prefix asdf)/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

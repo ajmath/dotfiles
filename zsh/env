@@ -22,21 +22,8 @@ if [ -e "/Users/amatheny/Library/Android/sdk" ]; then
   export ANDROID_HOME="/Users/amatheny/Library/Android/sdk/"
 fi
 
-if [ -e "/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt" ]; then
-    export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-fi
-
-if [ -e /usr/libexec/java_home ]; then
-    export JAVA_HOME=$(/usr/libexec/java_home -v '1.8*')
-fi
-
-if [ -e /usr/local/opt/grails/libexec ]; then
-    export GRAILS_HOME=/usr/local/opt/grails/libexec
-fi
-
-export JVM_ARGS="-Xmx4096m"
-export JRUBY_OPTS="-J-Xmx4096m"
-
 export ARCHFLAGS="-arch x86_64"
 
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+export EDITOR="vim"
